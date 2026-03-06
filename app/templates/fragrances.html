@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Collection | Fragrance Ledger{% endblock %}
+
+{% block content %}
+  <h2>Collection</h2>
+
+  {% if fragrances %}
+    <table>
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Name</th>
+          <th>Notes</th>
+          <th>Season</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for fragrance in fragrances %}
+          <tr>
+            <td>{{ fragrance.brand }}</td>
+            <td>{{ fragrance.name }}</td>
+            <td>{{ fragrance.notes or "—" }}</td>
+            <td>{{ fragrance.season or "—" }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No fragrances added yet. <a href="{{ url_for('main.add_fragrance') }}">Add your first one</a>.</p>
+  {% endif %}
+{% endblock %}

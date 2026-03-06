@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Add Fragrance | Fragrance Ledger{% endblock %}
+
+{% block content %}
+  <h2>Add Fragrance</h2>
+  <form method="post">
+    <label for="name">Fragrance Name</label>
+    <input id="name" name="name" type="text" required />
+
+    <label for="brand">Brand</label>
+    <input id="brand" name="brand" type="text" required />
+
+    <label for="notes">Notes</label>
+    <textarea id="notes" name="notes" rows="4"></textarea>
+
+    <label for="season">Season</label>
+    <input id="season" name="season" type="text" placeholder="Spring, Summer, etc." />
+
+    <button type="submit">Save Fragrance</button>
+  </form>
+{% endblock %}

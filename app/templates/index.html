@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | Fragrance Ledger{% endblock %}
+
+{% block content %}
+  <section>
+    <h2>Dashboard</h2>
+    <p>Total fragrances tracked: <strong>{{ total }}</strong></p>
+  </section>
+
+  <section>
+    <h3>Latest additions</h3>
+    {% if latest %}
+      <ul>
+        {% for fragrance in latest %}
+          <li>{{ fragrance.brand }} — {{ fragrance.name }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No fragrances in your ledger yet.</p>
+    {% endif %}
+  </section>
+{% endblock %}
